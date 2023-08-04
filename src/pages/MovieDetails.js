@@ -1,8 +1,8 @@
 import { useParams, useLocation } from 'react-router-dom';
 import { useState, useEffect, useRef } from 'react';
 import { Link, Outlet } from 'react-router-dom';
-import Cast from '../components/Cast.js';
-import Reviews from '../components/Reviews.js';
+// import Cast from '../components/Cast.js';
+// import Reviews from '../components/Reviews.js';
 import css from '../pages/MovieDetails.module.css';
 import Loader from 'components/Loader.js';
 
