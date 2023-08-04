@@ -27,7 +27,7 @@ const Movies = () => {
           })
           .then(response => {
             setMovie([...getNormalized(response.results)]);
-            console.log('запрос на movie идет', movie);
+            // console.log('запрос на movie идет', movie);
             // console.log('response.results', response.results);
             // console.log('response', response);
           });
