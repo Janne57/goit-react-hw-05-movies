@@ -29,7 +29,7 @@ const MovieDetails = () => {
           return response.json();
         })
         .then(response => {
-          console.log(response);
+          // console.log(response);
           // setDataMovie(response);
           setOriginalTitle(response.original_title);
           setReleaseDate(response.release_date);
@@ -73,12 +73,13 @@ const MovieDetails = () => {
       <p>({overView})</p>
       <p>Genres</p>
       <p>({genres})</p>
+      <h2>Additinal information</h2>
       <ul>
         <li>
-          <Link to="cast">{<Cast />}</Link>
+          <Link to="cast">Cast</Link>
         </li>
         <li>
-          <Link to="reviews ">{<Reviews />}</Link>
+          <Link to="reviews ">Reviews</Link>
         </li>
       </ul>
       <Outlet />

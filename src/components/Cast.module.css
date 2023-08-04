@@ -1,0 +1,12 @@
+.img {
+    width: 100px;
+    height: 140px;
+    border-radius: 5px;
+    border: solid 3px grey;
+}
+
+.img__item {
+    display: flex;
+    gap: 60px;
+    margin-bottom: 20px;
+}
