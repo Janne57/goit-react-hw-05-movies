@@ -1,4 +1,3 @@
-// import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
 import { ColorRing } from 'react-loader-spinner';
 import css from '..//components/Loader.module.css'
 

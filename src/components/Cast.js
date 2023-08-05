@@ -15,20 +15,6 @@ const Cast = () => {
     async function fetchActor() {
       setIsLoading(true);
       try {
-        // await fetchActor(`
-        // https://api.themoviedb.org/3/trending/movie/day?api_key=356db60679791a010148fefe0790ebd1`
-        // // https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=356db60679791a010148fefe0790ebd1`
-        // )
-
-        // .then(responseCast => {console.log('responseCastjson', responseCast);
-        //     return responseCast.json();
-        // })
-        // .then (responseCast => {
-        //   console.log('responseCast', responseCast);
-        //     // setActor(responseCast);
-
-        // })
-
         await fetch(
           `https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=356db60679791a010148fefe0790ebd1`
         )
@@ -36,15 +22,7 @@ const Cast = () => {
             return response.json();
           })
           .then(response => {
-            // setData(response);
-
             setData([...getNormalized(response.cast)]);
-            // setData(prevState => [
-            //   ...prevState,
-            //   ...getNormalized(response.cast),
-            // ]);
-
-            // console.log('запрос на Cast идет', data);
             // console.log('response.cast', response.cast);
             // console.log('response', response);
           });
@@ -90,7 +68,6 @@ const Cast = () => {
         })}
       </ul>
     </div>
-    // <div>{movieId}</div>
   );
 };
 

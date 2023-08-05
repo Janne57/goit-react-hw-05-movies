@@ -1,21 +1,27 @@
-.img {
-    width: 300px;
-    height: 460px;
-    margin-top: 30px;
-    margin-left: 50px;
-}
-
-.text__add {
-
-font: bold 30px sans-serif;
-}
-
-.text__second {
+.home__text {
     color: rgb(250, 246, 249);
     text-decoration: none;
     padding-bottom: 15px;
-    margin-bottom: 25px;
 }
+
+.form__basic {
+    margin-top: 50px;
+    margin-left: 15px;
+  
+} 
+
+.input__movie {
+    width: 300px;
+    height: 50px;
+    padding: 5px;
+    font-size: 28px;
+    font-weight: 400;
+    border-radius: 15px;
+    color: #9e9e9e;
+    background-color: #fff;
+    border: 1px solid #bdbdbd;
+    margin-right: 50px;
+}  
 
 .btn {
     color: white;
@@ -24,6 +30,8 @@ font: bold 30px sans-serif;
     margin: 45px;
     border-radius: 6px;
     text-decoration: none;
+    font-size: 38px;
+    font-weight: 400;
   }
 
   .btn:hover,

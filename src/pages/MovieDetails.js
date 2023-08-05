@@ -1,8 +1,6 @@
 import { useParams, useLocation } from 'react-router-dom';
 import { useState, useEffect, useRef } from 'react';
 import { Link, Outlet } from 'react-router-dom';
-// import Cast from '../components/Cast.js';
-// import Reviews from '../components/Reviews.js';
 import css from '../pages/MovieDetails.module.css';
 import Loader from 'components/Loader.js';
 
@@ -11,7 +9,6 @@ const MovieDetails = () => {
   const { movieId } = useParams();
   const location = useLocation();
   const backLinkLocationRef = useRef(location.state?.from ?? '/');
-  // console.log(movieId);
   const [originalTitle, setOriginalTitle] = useState('');
   const [releaseDate, setReleaseDate] = useState(0);
   const [posterPath, setPosterPath] = useState('');
@@ -38,9 +35,6 @@ const MovieDetails = () => {
           setVoteAverage(response.vote_average);
           setOverView(response.overview);
           setGenres([...getNormalizedGenres(response.genres)]);
-          // console.log(originalTitle);
-          // console.log('genres', response.genres);
-          // console.log(releaseDate.getFullYear());
         });
     } catch (error) {
     } finally {
@@ -53,13 +47,12 @@ const MovieDetails = () => {
   };
 
   console.log('location', location);
-  
 
   return (
-    // <>MovieDetails {movieId}</>;
-
     <div>
-      <Link to={backLinkLocationRef.current}>Go back</Link>
+      <Link to={backLinkLocationRef.current} className={css.btn}>
+        Go back
+      </Link>
       {isLoading && <Loader />}
       <img
         className={css.img}
@@ -69,17 +62,21 @@ const MovieDetails = () => {
       <h1>{originalTitle}</h1>
       <p>({parseInt(releaseDate)})</p>
       <p>User score: {`${Math.round(voteAverage * 10)}`}%</p>
-      <p>Overview</p>
+      <p className={css.text__add}>Overview</p>
       <p>({overView})</p>
-      <p>Genres</p>
+      <p className={css.text__add}>Genres</p>
       <p>({genres})</p>
-      <h2>Additinal information</h2>
+      <h2 className={css.text__add}>Additinal information</h2>
       <ul>
         <li>
-          <Link to="cast">Cast</Link>
+          <Link to="cast" className={css.text__second}>
+            Cast
+          </Link>
         </li>
         <li>
-          <Link to="reviews ">Reviews</Link>
+          <Link to="reviews" className={css.text__second}>
+            Reviews
+          </Link>
         </li>
       </ul>
       <Outlet />

@@ -19,21 +19,10 @@ const Reviews = () => {
             return response.json();
           })
           .then(response => {
-            // setData(response);
-
             setData([...getNormalized(response.results)]);
-            // setData(prevState => [
-            //   ...prevState,
-            //   ...getNormalized(response.cast),
-            // ]);
-
-            // console.log('запрос на Reviews идет', data);
-            // console.log('response.results', response.results);
-            // console.log('response', response);
           });
       } catch (error) {
         setError(error.message);
-        // console.log(error);
       } finally {
         setIsLoading(false);
       }
@@ -51,14 +40,13 @@ const Reviews = () => {
 
   return (
     <div>
-      Reviews
       {error && { error }}
       {isLoading && <Loader />}
       <ul>
         {data.map(({ author, content, id }) => {
           return (
             <li key={id}>
-              <p>{author}</p>
+              <p>{author}:</p>
               <p>{content}</p>
             </li>
           );
