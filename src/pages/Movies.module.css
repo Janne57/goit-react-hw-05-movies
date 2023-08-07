@@ -4,6 +4,15 @@
     padding-bottom: 15px;
 }
 
+.text {
+    color: rgba(250, 246, 249, 0.5);
+    text-decoration: none;
+    padding-left: 0px;
+    font-style: italic;
+    /* outline: 3px solid green; */
+    /* padding-bottom: 15px; */
+}
+
 .form__basic {
     margin-top: 150px;
     margin-left: 15px;

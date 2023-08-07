@@ -9,7 +9,7 @@ const Home = () => {
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const location = useLocation();
-  console.log('locationHome', location);
+  // console.log('locationHome', location);
 
   useEffect(() => {
     async function fetchMovie() {

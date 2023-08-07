@@ -46,7 +46,7 @@ const MovieDetails = () => {
     return array.map(item => item.name).join(' ');
   };
 
-  console.log('location', location);
+  // console.log('location', location);
 
   return (
     <div>
