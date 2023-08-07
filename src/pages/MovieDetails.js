@@ -1,5 +1,5 @@
 import { useParams, useLocation } from 'react-router-dom';
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, Outlet } from 'react-router-dom';
 import css from '../pages/MovieDetails.module.css';
 import Loader from 'components/Loader.js';
