@@ -8,7 +8,7 @@ const MovieDetails = () => {
   const [isLoading, setIsLoading] = useState(false);
   const { movieId } = useParams();
   const location = useLocation();
-  const backLinkLocationRef = useRef(location.state?.from ?? '/');
+  // const backLinkLocationRef = useRef(location.state?.from ?? '/');
   const [originalTitle, setOriginalTitle] = useState('');
   const [releaseDate, setReleaseDate] = useState(0);
   const [posterPath, setPosterPath] = useState('');
