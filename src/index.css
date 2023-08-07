@@ -29,6 +29,10 @@ ol {
   list-style: none;
 }
 
+h1 {
+  padding-top: 100px;
+}
+
 h1,
 h2,
 p {

@@ -50,7 +50,8 @@ const MovieDetails = () => {
 
   return (
     <div>
-      <Link to={backLinkLocationRef.current} className={css.btn}>
+      {/* <Link to={backLinkLocationRef.current} className={css.btn}> */}
+      <Link to={location.state?.from || '/'} className={css.btn}>
         Go back
       </Link>
       {isLoading && <Loader />}
