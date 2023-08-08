@@ -1,5 +1,5 @@
 import { useParams, useLocation } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Link, Outlet } from 'react-router-dom';
 import css from '../pages/MovieDetails.module.css';
 import Loader from 'components/Loader.js';
@@ -8,7 +8,7 @@ const MovieDetails = () => {
   const [isLoading, setIsLoading] = useState(false);
   const { movieId } = useParams();
   const location = useLocation();
-  // const backLinkLocationRef = useRef(location.state?.from ?? '/');
+  const backLinkLocationRef = useRef(location.state?.from ?? '/');
   const [originalTitle, setOriginalTitle] = useState('');
   const [releaseDate, setReleaseDate] = useState(0);
   const [posterPath, setPosterPath] = useState('');
@@ -50,8 +50,8 @@ const MovieDetails = () => {
 
   return (
     <div>
-      {/* <Link to={backLinkLocationRef.current} className={css.btn}> */}
-      <Link to={location.state?.from || '/'} className={css.btn}>
+      <Link to={backLinkLocationRef.current} className={css.btn}>
+      {/* <Link to={location.state?.from || '/'} className={css.btn}> */}
         Go back
       </Link>
       {isLoading && <Loader />}
@@ -70,12 +70,12 @@ const MovieDetails = () => {
       <h2 className={css.text__add}>Additinal information</h2>
       <ul>
         <li>
-          <Link to="cast" className={css.text__second}>
+          <Link to="cast" state={{ from: location }} className={css.text__second}>
             Cast
           </Link>
         </li>
         <li>
-          <Link to="reviews" className={css.text__second}>
+          <Link to="reviews" state={{ from: location }} className={css.text__second}>
             Reviews
           </Link>
         </li>
